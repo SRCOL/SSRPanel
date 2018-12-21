@@ -1,10 +1,8 @@
 @extends('admin.layouts')
-
 @section('css')
     <link href="/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
 @endsection
-@section('title', '控制面板')
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top:0;">
@@ -44,7 +42,7 @@
                                             <tr class="odd gradeX">
                                                 <td> {{$group->id}} </td>
                                                 <td> {{$group->name}} </td>
-                                                <td> {{$group->level}} </td>
+                                                <td> {{$levelMap[$group->level]}} </td>
                                                 <td style="text-align: center;">
                                                     <button type="button" class="btn btn-sm blue btn-outline" onclick="editGroup('{{$group->id}}')">
                                                         <i class="fa fa-pencil"></i>
@@ -79,8 +77,6 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script src="/js/layer/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         // 添加节点分组
         function addGroup() {

@@ -7,13 +7,16 @@ return [
     'exchange_subscribe'              => '更换',
     'subscribe_warning'               => '警告：该订阅地址仅限个人使用，请勿传播该地址，否则会导致您的账号流量使用情况异常触发自动封号机制。',
     'reset_password_title'            => '重置密码',
+    'username_placeholder'            => '请输入用户名',
     'system_down'                     => '系统维护中',
     'subscribe_baned'                 => '您的订阅功能被禁用，请联系管理员恢复',
+    'download'                        => '下载',
 
     // 菜单
     'home'                            => '个人中心',
     'services'                        => '购买服务',
     'traffic_log'                     => '流量记录',
+    'help'                            => '帮助中心',
     'invite_code'                     => '邀请码',
     'invoices'                        => '我的账单',
     'tickets'                         => '服务单',
@@ -24,7 +27,7 @@ return [
     // 首页
     'ratio_tips'                      => '推荐使用支持节点订阅功能的客户端，通过订阅功能可以在客户端快速同步节点信息。',
     'subscribe_button'                => '获取订阅地址',
-    'account_info'                    => '账号信息',
+    'account_info'                    => '账户信息',
     'account_level'                   => '等级',
     'account_balance'                 => '账户余额',
     'account_score'                   => '积分',
@@ -36,6 +39,7 @@ return [
     'account_total_traffic'           => '共计',
     'account_usage_traffic'           => '已使用',
     'account_reset_notice'            => '每月 :reset_day 日重置',
+    'account_login_log'               => '登陆日志',
     'article_title'                   => '文章',
     'recharge'                        => '充值',
     'enabled'                         => '正常',
@@ -94,6 +98,7 @@ return [
     'redeem_coupon'                   => '使用',
     'service_type_1'                  => '流量包',
     'service_type_2'                  => '套餐',
+    'service_type_3'                  => '余额',
 
     // 流量日志
     'traffic_log_tips'                => '提示：流量统计更新会有延迟。按天统计于次日更新，按小时统计于次小时更新。',
@@ -123,6 +128,7 @@ return [
     'invoice_title'                   => '消费记录',
     'invoice_table_id'                => '编号',
     'invoice_table_name'              => '服务',
+    'invoice_table_pay_way'           => '支付方式',
     'invoice_table_price'             => '金额',
     'invoice_table_create_date'       => '购买日期',
     'invoice_table_expire_at'         => '到期时间',
@@ -133,6 +139,7 @@ return [
     'invoice_table_wait_confirm'      => '待确认',
     'invoice_table_wait_active'       => '使用中',
     'invoice_table_expired'           => '已过期',
+    'invoice_table_goods_deleted'     => '[服務已刪除]',
 
     // 工单
     'ticket_title'                    => '我的服务单',
@@ -151,7 +158,7 @@ return [
     'ticket_reply_button'             => '回复',
 
     // 推广返利
-    'referral_title'                  => '我的推广',
+    'referral_title'                  => '佣金记录',
     'referral_button'                 => '复制',
     'referral_my_link'                => '我的推广链接',
     'referral_table_user'             => '消费者',
@@ -171,4 +178,7 @@ return [
     'logout'                          => '退出',
     'promote_link'                    => '通过您的推广链接注册并激活，你们双方都将获得 :traffic 流量奖励；当他们消费时，您将获得他们消费金额的 :referral_percent% 作为奖励。',
     'promote_invite_code'             => '通过您的邀请码注册并激活，你们双方都将获得 :traffic 流量奖励；当他们消费时，您将获得他们消费金额的 :referral_percent% 作为奖励。',
+    'invite_user_title'               => '邀请记录',
+    'invite_user_username'            => '用户名',
+    'invite_user_created_at'          => '注册时间',
 ];

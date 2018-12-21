@@ -1,8 +1,6 @@
 @extends('admin.layouts')
-
 @section('css')
 @endsection
-@section('title', '控制面板')
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top:0;">
@@ -19,7 +17,7 @@
                     <div class="portlet-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <textarea class="form-control" rows="33" name="content" id="content" placeholder="请填入要反解析的SSR(R)链接，一行一条" autofocus></textarea>
+                                <textarea class="form-control" rows="33" name="content" id="content" placeholder="请填入要反解析的ShadowsocksR链接，一行一条" autofocus></textarea>
                             </div>
                             <div class="col-md-6">
                                 <textarea class="form-control" rows="33" name="result" id="result" readonly="readonly"></textarea>
@@ -43,8 +41,6 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script src="/js/layer/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         // 转换
         function doDecompile() {

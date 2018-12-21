@@ -1,10 +1,8 @@
 @extends('user.layouts')
-
 @section('css')
     <link href="/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
 @endsection
-@section('title', trans('home.panel'))
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top:0;">
@@ -42,7 +40,7 @@
                                     @foreach($ticketList as $key => $ticket)
                                         <tr class="odd gradeX">
                                             <td> {{$key + 1}} </td>
-                                            <td> <a href="{{url('user/replyTicket?id=') . $ticket->id}}" target="_blank">{{$ticket->title}}</a> </td>
+                                            <td> <a href="{{url('replyTicket?id=') . $ticket->id}}" target="_blank">{{$ticket->title}}</a> </td>
                                             <td>
                                                 @if ($ticket->status == 0)
                                                     <span class="label label-info"> {{trans('home.ticket_table_status_wait')}} </span>
@@ -93,8 +91,6 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script src="/js/layer/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         // 发起工单
         function addTicket() {
@@ -102,17 +98,17 @@
             var content = $("#content").val();
 
             if (title == '' || title == undefined) {
-                bootbox.alert('工单标题不能为空');
+                layer.alert('您未填写工单标题', {icon: 2, title:'提示'});
                 return false;
             }
 
             if (content == '' || content == undefined) {
-                bootbox.alert('工单内容不能为空');
+                layer.alert('您未填写工单内容', {icon: 2, title:'提示'});
                 return false;
             }
 
             layer.confirm('确定提交工单？', {icon: 3, title:'警告'}, function(index) {
-                $.post("{{url('user/addTicket')}}", {_token:'{{csrf_token()}}', title:title, content:content}, function(ret) {
+                $.post("{{url('addTicket')}}", {_token:'{{csrf_token()}}', title:title, content:content}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();

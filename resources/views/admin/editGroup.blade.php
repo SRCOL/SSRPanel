@@ -1,9 +1,6 @@
 @extends('admin.layouts')
-
 @section('css')
-    <link href="/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
 @endsection
-@section('title', '控制面板')
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top:0;">
@@ -39,8 +36,8 @@
                                     <label class="control-label col-md-3">分组级别</label>
                                     <div class="col-md-4">
                                         <select class="form-control" name="level" id="level" required>
-                                            @if(!$level_list->isEmpty())
-                                                @foreach($level_list as $level)
+                                            @if(!$levelList->isEmpty())
+                                                @foreach($levelList as $level)
                                                     <option value="{{$level->level}}" {{$group->level == $level->level ? 'selected' : ''}}>{{$level->level_name}}</option>
                                                 @endforeach
                                             @endif
@@ -68,8 +65,6 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script src="/js/layer/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         // ajax同步提交
         function do_submit() {

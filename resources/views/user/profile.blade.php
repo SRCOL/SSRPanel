@@ -1,9 +1,7 @@
 @extends('user.layouts')
-
 @section('css')
     <link href="/assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
 @endsection
-@section('title', trans('home.panel'))
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top: 0px; min-height: 354px;">
@@ -47,7 +45,7 @@
                                 <div class="portlet-body">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1">
-                                            <form action="{{url('user/profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
+                                            <form action="{{url('profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
                                                 <div class="form-group">
                                                     <label class="control-label">{{trans('home.current_password')}}</label>
                                                     <input type="password" class="form-control" name="old_password" id="old_password" autofocus required />
@@ -67,7 +65,7 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="tab_2">
-                                            <form action="{{url('user/profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
+                                            <form action="{{url('profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
                                                 <div class="form-group">
                                                     <label class="control-label">{{trans('home.wechat')}}</label>
                                                     <input type="text" class="form-control" name="wechat" value="{{$info->wechat}}" id="wechat" required />
@@ -87,35 +85,11 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="tab_3">
-                                            <form action="{{url('user/profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
+                                            <form action="{{url('profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
                                                 <div class="form-group">
                                                     <label class="control-label"> {{trans('home.connection_password')}} </label>
                                                     <input type="text" class="form-control" name="passwd" value="{{$info->passwd}}" id="passwd" required />
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label"> {{trans('home.encrpytion')}} </label>
-                                                    <select class="form-control" name="method" id="method">
-                                                        @foreach ($method_list as $method)
-                                                            <option value="{{$method->name}}" @if($method->name == $info->method) selected @endif>{{$method->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label"> {{trans('home.protocal')}} </label>
-                                                    <select class="form-control" name="protocol" id="protocol">
-                                                        @foreach ($protocol_list as $protocol)
-                                                            <option value="{{$protocol->name}}" @if($protocol->name == $info->protocol) selected @endif>{{$protocol->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label"> {{trans('home.obfs')}} </label>
-                                                    <select class="form-control" name="obfs" id="obfs">
-                                                        @foreach ($obfs_list as $obfs)
-                                                            <option value="{{$obfs->name}}" @if($obfs->name == $info->obfs) selected @endif>{{$obfs->name}}</option>
-                                                        @endforeach
-                                                    </select>
                                                 </div>
                                                 <div class="form-actions">
                                                     <div class="row">
@@ -140,7 +114,4 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script type="text/javascript">
-        //
-    </script>
 @endsection

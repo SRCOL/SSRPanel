@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 return [
     'panel'                           => 'コントロールパネル',
@@ -7,13 +7,16 @@ return [
     'exchange_subscribe'              => '変更',
     'subscribe_warning'               => '警告：この購読URLは個人用です。このURLは拡散しないでください。それ以外の場合は、アカウントのデータ通信量が異常である可能性があります。',
     'reset_password_title'            => 'パスワードを再設定する',
+    'username_placeholder'            => 'アカウントを入力してください',
     'system_down'                     => 'システムはメンテナンス中です',
     'subscribe_baned'                 => '購読が無効になっています。管理者にお問い合わせください。',
+    'download'                        => 'ダウンロード',
 
     // 菜单
-    'home'                            => 'ノードと情報',
+    'home'                            => 'パーソナルセンター',
     'services'                        => 'ショップ',
     'traffic_log'                     => '使用記録',
+    'help'                            => '手伝いをする',
     'invite_code'                     => '招待コード',
     'invoices'                        => 'ビル',
     'tickets'                         => 'サポート',
@@ -36,6 +39,7 @@ return [
     'account_total_traffic'           => 'データ通信量の上限',
     'account_usage_traffic'           => '使用済み',
     'account_reset_notice'            => '毎月 :reset_day 日にデータ通信量をリセットする',
+    'account_login_log'               => '登録ログ',
     'article_title'                   => '文章',
     'recharge'                        => 'チャージ',
     'enabled'                         => '有効',
@@ -86,7 +90,7 @@ return [
     'service_total_price'             => '合計',
     'service_pay_button'              => '残額で払う',
     'services_none'                   => '利用可能なサービスはありません',
-    'service_traffic'                 => '月額利用可能',
+    'service_traffic'                 => '流れを含む',
     'service_days'                    => '有効期間',
     'service_buy_button'              => '購入する',
     'day'                             => '日',
@@ -94,6 +98,7 @@ return [
     'redeem_coupon'                   => '使用する',
     'service_type_1'                  => '流量包',
     'service_type_2'                  => 'コース',
+    'service_type_3'                  => '残高',
 
     // 流量日志
     'traffic_log_tips'                => '注意：データの更新が遅れている',
@@ -123,6 +128,7 @@ return [
     'invoice_title'                   => 'ビル',
     'invoice_table_id'                => 'ビル番号',
     'invoice_table_name'              => 'サービス',
+    'invoice_table_pay_way'           => '支払い方式',
     'invoice_table_price'             => '金額',
     'invoice_table_create_date'       => '購入日',
     'invoice_table_expire_at'         => '有効期限',
@@ -133,6 +139,7 @@ return [
     'invoice_table_wait_confirm'      => '確認を待っています',
     'invoice_table_wait_active'       => '使用中',
     'invoice_table_expired'           => '期限が切れた',
+    'invoice_table_goods_deleted'     => '[削除]',
 
     // 工单
     'ticket_title'                    => '私のサービスリスト',
@@ -151,7 +158,7 @@ return [
     'ticket_reply_button'             => '返信',
 
     // 推广返利
-    'referral_title'                  => '私のプロモーション',
+    'referral_title'                  => '口銭',
     'referral_button'                 => 'コピー',
     'referral_my_link'                => '私のプロモーションリンク',
     'referral_table_user'             => '消費者',
@@ -171,4 +178,7 @@ return [
     'logout'                          => 'ログアウト',
     'promote_link'                    => 'あなたの普及のリンクを通じて登録してアクティブにして、あなたたちの双方はすべて :traffic の流量の奨励を獲得します；彼らが消費する時、あなたは彼らの消費金額の :referral_percent% を獲得することを奨励します。',
     'promote_invite_code'             => 'お客様の招待コードの登録をアクティブにして、あなた達の双方は獲得して :traffic 流量奨励;彼らが消费の時、あなたは獲得して彼らの消費金額の :referral_percent% ご褒美として。',
+    'invite_user_title'               => '招待状',
+    'invite_user_username'            => 'ユーザー名',
+    'invite_user_created_at'          => '登録時間',
 ];

@@ -1,10 +1,8 @@
 @extends('admin.layouts')
-
 @section('css')
     <link href="/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
 @endsection
-@section('title', '控制面板')
 @section('content')
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="padding-top:0;">
@@ -38,7 +36,8 @@
                                 <thead>
                                 <tr>
                                     <th> <span class="node-id"><a href="javascript:showIdTips();">ID</a></span> </th>
-                                    <th> 节点名称 </th>
+                                    <th> 类型 </th>
+                                    <th> 名称 </th>
                                     <th> IP </th>
                                     <th> 绑定域名 </th>
                                     <th> 状态 </th>
@@ -52,19 +51,20 @@
                                 <tbody>
                                     @if($nodeList->isEmpty())
                                         <tr>
-                                            <td colspan="10" style="text-align: center;">暂无数据</td>
+                                            <td colspan="11" style="text-align: center;">暂无数据</td>
                                         </tr>
                                     @else
                                         @foreach($nodeList as $node)
                                             <tr class="odd gradeX">
                                                 <td> {{$node->id}} </td>
-                                                <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}" title="维护中">{{$node->name}}</span> </td>
+                                                <td> {{$node->type == 2 ? 'V2Ray' : 'Shadowsocks(R)'}} </td>
+                                                <td> {{$node->name}} </td>
                                                 <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}">{{$node->ip}}</span> </td>
                                                 <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}">{{$node->server}}</span> </td>
                                                 <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}">{{$node->load}}</span> </td>
                                                 <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}">{{$node->online_users}}</span> </td>
                                                 <td> {{$node->transfer}} </td>
-                                                <td> <span class="label label-danger">{{$node->traffic_rate}}</span> </td>
+                                                <td> <span class="label {{$node->status ? 'label-danger' : 'label-default'}}">{{$node->traffic_rate}}</span> </td>
                                                 <td>
                                                     @if($node->compatible) <span class="label label-info">兼</span> @endif
                                                     @if($node->single) <span class="label label-info">单</span> @endif
@@ -107,8 +107,6 @@
     <!-- END CONTENT BODY -->
 @endsection
 @section('script')
-    <script src="/js/layer/layer.js" type="text/javascript"></script>
-
     <script type="text/javascript">
         // 添加节点
         function addNode() {
